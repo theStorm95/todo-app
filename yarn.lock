@@ -396,6 +396,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mui/material-nextjs@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "@mui/material-nextjs@npm:6.0.1"
+  dependencies:
+    "@babel/runtime": "npm:^7.25.0"
+  peerDependencies:
+    "@emotion/cache": ^11.11.0
+    "@emotion/react": ^11.11.4
+    "@emotion/server": ^11.11.0
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
+    next: ^13.0.0 || ^14.0.0
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@emotion/cache":
+      optional: true
+    "@emotion/server":
+      optional: true
+    "@types/react":
+      optional: true
+  checksum: 10c0/24873ece514db5a3f30eccc8d17e9a1fe78d35bc3a7372b836f3531e5b1ba0de0d2e256526dea8891dc388a025d95de1e9d6d43aabe04c09a2a4d0ca29916c90
+  languageName: node
+  linkType: hard
+
 "@mui/material@npm:^6.0.1":
   version: 6.0.1
   resolution: "@mui/material@npm:6.0.1"
@@ -3661,9 +3684,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "todo-app@workspace:."
   dependencies:
+    "@emotion/cache": "npm:^11.13.1"
     "@emotion/react": "npm:^11.13.3"
     "@emotion/styled": "npm:^11.13.0"
     "@mui/material": "npm:^6.0.1"
+    "@mui/material-nextjs": "npm:^6.0.1"
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
