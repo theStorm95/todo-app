@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <Grid2
       container
-      spacing={3}
+      spacing={1}
       direction="column"
       alignItems="center"
       justifyContent="center"
@@ -34,23 +34,24 @@ export default function Home() {
           flexDirection: "row",
           justifyContent: "space-between",
           width: theme.spacing(100),
+          alignItems: "center",
         }}
       >
-        <Grid2 sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <Button>Add Task</Button>
+        <Grid2>
+          <Button variant="outlined">Add Task</Button>
         </Grid2>
         <Grid2>
-          <FormControl sx={{ m: 1, minWidth: 80 }}>
-            <InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel>
+          <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
+            <InputLabel id="demo-simple-select-autowidth-label">
+              Filters
+            </InputLabel>
             <Select
               labelId="demo-simple-select-autowidth-label"
               id="demo-simple-select-autowidth"
               autoWidth
               label="Filters"
+              defaultValue="All"
             >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
               <MenuItem>All</MenuItem>
               <MenuItem>Today</MenuItem>
               <MenuItem>Tomorrow</MenuItem>
