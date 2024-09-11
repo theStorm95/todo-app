@@ -12,34 +12,18 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { useState } from "react";
+import { Task } from "../types";
 
-interface Task {
-  id: number;
-  title: string;
-  dueDate: Date;
-  createdDate: Date;
+interface TodoItemsProps {
+  tasks: Task[];
 }
 
-const tasks: Task[] = [
-  {
-    id: 1,
-    title: "Do Laundry",
-    dueDate: new Date(),
-    createdDate: new Date(-1),
-  },
-  {
-    id: 2,
-    title: "Clean out the fridge",
-    dueDate: new Date(),
-    createdDate: new Date(-1),
-  },
-];
-
-export default function TodoItems() {
+export default function TodoItems({ tasks }: TodoItemsProps) {
   const [checked, setChecked] = useState<number[]>([0]);
   const theme = useTheme();
 
   const handleToggle = (taskKey: number) => {
+    console.log(tasks);
     const currentIndex = checked.indexOf(taskKey);
     const newChecked = [...checked];
 
@@ -89,7 +73,7 @@ export default function TodoItems() {
           <ListItemText
             id={`${task.id}`}
             primary={task.title}
-            secondary={task.dueDate.toDateString()}
+            secondary={task.dueDate.toISODate()}
           />
         </ListItemButton>
       </ListItem>
