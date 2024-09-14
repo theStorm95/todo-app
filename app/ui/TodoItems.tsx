@@ -16,9 +16,10 @@ import { Task } from "../types";
 
 interface TodoItemsProps {
   tasks: Task[];
+  onDeleteTask: (newTasks: Task[]) => void;
 }
 
-export default function TodoItems({ tasks }: TodoItemsProps) {
+export default function TodoItems({ tasks, onDeleteTask }: TodoItemsProps) {
   const [checked, setChecked] = useState<number[]>([0]);
   const theme = useTheme();
 
@@ -36,6 +37,16 @@ export default function TodoItems({ tasks }: TodoItemsProps) {
     setChecked(newChecked);
   };
 
+  const handleDeleteTask = (task: Task) => {
+    onDeleteTask(
+      tasks.filter((item) => {
+        if (item.id !== task.id) {
+          return item;
+        }
+      })
+    );
+  };
+
   const jsxTasks = tasks.map((task) => {
     return (
       <ListItem
@@ -45,7 +56,11 @@ export default function TodoItems({ tasks }: TodoItemsProps) {
             <IconButton>
               <EditIcon />
             </IconButton>
-            <IconButton edge="end" aria-label="delete">
+            <IconButton
+              edge="end"
+              aria-label="delete"
+              onClick={() => handleDeleteTask(task)}
+            >
               <DeleteIcon />
             </IconButton>
           </Grid2>

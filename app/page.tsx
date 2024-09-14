@@ -26,6 +26,10 @@ export default function Home() {
     setTasks([...tasks, newTask]);
   };
 
+  const handleDeleteTask = (newTasks: Task[]) => {
+    setTasks(newTasks);
+  };
+
   return (
     <LocalizationProvider dateAdapter={AdapterLuxon}>
       <Grid2
@@ -87,7 +91,7 @@ export default function Home() {
               backgroundColor: theme.palette.secondary.main,
             }}
           >
-            <TodoItems tasks={tasks} />
+            <TodoItems tasks={tasks} onDeleteTask={handleDeleteTask} />
           </Card>
         </Grid2>
       </Grid2>
