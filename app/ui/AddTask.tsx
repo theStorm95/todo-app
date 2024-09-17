@@ -72,36 +72,30 @@ export default function AddTask({ tasks, onAddTask }: AddTaskProps) {
           onSubmit={handleAddTask}
         >
           <Grid2>
-            <Grid2>
-              <Typography variant="h5" align="center" gutterBottom>
-                Task Creation
-              </Typography>
-            </Grid2>
-            <Grid2>
-              <Grid2>
-                <TextField
-                  label="Task Name"
-                  id="task-name-input"
-                  margin="normal"
-                  fullWidth
-                  value={taskName}
-                  onChange={(e) => {
-                    setTaskName(e.target.value);
-                  }}
-                />
-                <DatePicker
-                  label="Choose Due Date"
-                  value={dueDate}
-                  onChange={(date) => {
-                    date ? setDueDate(date) : setDueDate(DateTime.now());
-                  }}
-                  sx={{ marginTop: theme.spacing(2) }}
-                />
-              </Grid2>
-              <Grid2 sx={{ textAlign: "center", marginTop: "auto" }}>
-                <Button type="submit">Add Task</Button>
-              </Grid2>
-            </Grid2>
+            <Typography variant="h5" align="center" gutterBottom>
+              Task Creation
+            </Typography>
+            <TextField
+              label="Task Name"
+              id="task-name-input"
+              margin="normal"
+              fullWidth
+              value={taskName}
+              onChange={(e) => {
+                setTaskName(e.target.value);
+              }}
+              sx={{ paddingBottom: theme.spacing(3) }}
+            />
+            <DatePicker
+              label="Choose Due Date"
+              value={dueDate}
+              onChange={(date) => {
+                date ? setDueDate(date) : setDueDate(DateTime.now());
+              }}
+            />
+          </Grid2>
+          <Grid2 display="flex" justifyContent="center" alignItems="center">
+            <Button type="submit">Add Task</Button>
           </Grid2>
         </Box>
       </Modal>
