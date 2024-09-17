@@ -58,8 +58,8 @@ export default function AddTask({ tasks, onAddTask }: AddTaskProps) {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            height: "50vh",
-            width: "40%",
+            height: "45vh",
+            width: "35%",
             bgcolor: "background.paper",
             borderRadius: theme.spacing(1),
             boxShadow: 24,
@@ -95,7 +95,9 @@ export default function AddTask({ tasks, onAddTask }: AddTaskProps) {
             />
           </Grid2>
           <Grid2 display="flex" justifyContent="center" alignItems="center">
-            <Button type="submit">Add Task</Button>
+            <Button type="submit" variant="outlined">
+              Add Task
+            </Button>
           </Grid2>
         </Box>
       </Modal>
